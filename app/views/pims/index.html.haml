@@ -1,0 +1,6 @@
+%h1 PinBoard
+
+- @pims.each do |pim|
+  %h2= link_to pim.title, pim
+
+=link_to "New Pin", new_pim_path

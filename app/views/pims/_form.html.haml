@@ -1,0 +1,17 @@
+=simple_form_for @pim, html: {multipart: true} do |f|
+  - if @pim.errors.any?
+    #errors
+      %h2
+      =pluralize(@pim.errors.count, "error")
+      prevented this Pim from saving
+      %ul
+        - @pin.errors.full_message.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.input :title, input_html: {class: 'form-controll'}
+
+  .form-group
+    = f.input :description, input_html: {class: 'form-controll'}
+
+  = f.button :submit, class: "btn btn-primary"

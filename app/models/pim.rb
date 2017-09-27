@@ -1,0 +1,2 @@
+class Pim < ApplicationRecord
+end
