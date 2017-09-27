@@ -1,6 +1,10 @@
 %h1= @pim.title
 %p= @pim.description
 
+%p
+  Submitted by
+  = @pim.user.email
+%br/
 = link_to "Back", root_path
 = link_to "Edit", edit_pim_path
 = link_to "Delete", pim_path, method: :delete, data: {confirm: "Are you shure?"}

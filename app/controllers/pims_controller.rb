@@ -10,7 +10,7 @@ class PimsController < ApplicationController
   end
 
   def new
-    @pim=Pim.new
+    @pim = current_user.pims.build
   end
 
   def edit
@@ -31,7 +31,7 @@ class PimsController < ApplicationController
   end
 
   def create
-    @pim=Pim.new(pim_params)
+    @pim = current_user.pims.build(pim_params)
 
     if @pim.save
       redirect_to root_path
