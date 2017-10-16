@@ -1,6 +1,6 @@
 {
   "name": "pin",
   "private": true,
-  "dependencies": {},
-  "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony"
+  "dependencies": {}
+  
 }
