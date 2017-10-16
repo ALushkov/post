@@ -15,4 +15,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap-sprockets
+//= require jquery3
+//= require popper
+//= require masonry/jquery.masonry
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import '**/*';
 // require_tree .

@@ -20,7 +20,13 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'simple_form', '~> 3.5'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'devise', '~> 4.3'
+gem 'paperclip', '~> 5.1'
+gem 'masonry-rails', '~> 0.2.4'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'bcrypt', '~> 3.1.11'
+gem 'bootstrap'
+
+
 
 
 group :development, :test do

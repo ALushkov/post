@@ -1,6 +1,6 @@
 class PimsController < ApplicationController
-  before_action :find_pim, only: [:show, :edit, :update, :destroy]
-
+  before_action :find_pim, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @pims=Pim.all
   end
@@ -30,6 +30,11 @@ class PimsController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+    @pim.upvote_by current_user
+    redirect_to pim_path
+  end
+
   def create
     @pim = current_user.pims.build(pim_params)
 
@@ -43,7 +48,7 @@ class PimsController < ApplicationController
   private
 
   def pim_params
-    params.require(:pim).permit(:title, :description)
+    params.require(:pim).permit(:title, :description, :image)
   end
 
   def find_pim

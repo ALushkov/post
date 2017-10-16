@@ -1,6 +1,8 @@
-%h1 PinBoard
-
-- @pims.each do |pim|
-  %h2= link_to pim.title, pim
-
-=link_to "New Pin", new_pim_path
+#pims.transitions-enabled
+  - @pims.each do |pim|
+    .box.panel.panel-default
+      = link_to (image_tag pim.image.url), pim
+      %h2= link_to pim.title, pim
+      %p.user
+        Submitted by
+        = pim.user.email

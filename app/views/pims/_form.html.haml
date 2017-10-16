@@ -1,17 +1,20 @@
-=simple_form_for @pim, html: {multipart: true} do |f|
+= simple_form_for @pim, html: { multipart: true } do |f|
   - if @pim.errors.any?
     #errors
       %h2
-      =pluralize(@pim.errors.count, "error")
-      prevented this Pim from saving
+        = pluralize(@pim.errors.count, "error")
+        prevented this pim from saving
       %ul
-        - @pin.errors.full_message.each do |msg|
+        - @pim.errors.full_messages.each do |msg|
           %li= msg
 
   .form-group
-    = f.input :title, input_html: {class: 'form-controll'}
+    = f.input :image, input_html: { class: 'form-control' }
 
   .form-group
-    = f.input :description, input_html: {class: 'form-controll'}
+    = f.input :title, input_html: { class: 'form-control' }
+
+  .form-group
+    = f.input :description, input_html: { class: 'form-control' }
 
   = f.button :submit, class: "btn btn-primary"
